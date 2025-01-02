@@ -13,6 +13,10 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
     groundTile: cc.Prefab
+    @property(cc.Node)
+    mountain1: cc.Node
+    @property(cc.Node)
+    mountain2: cc.Node
 
 
     game: Game
@@ -41,6 +45,14 @@ export default class NewClass extends cc.Component {
         this.node.x -= speed
         if (this.node.x < -320) {
             this.node.x += 320 - 18.5
+        }
+        this.mountain1.x -= speed;
+        if (this.mountain1.x < -568) {
+            this.mountain1.x = 568;
+        }
+        this.mountain2.x -= speed;
+        if (this.mountain2.x < -568) {
+            this.mountain2.x = 568;
         }
     }
 
