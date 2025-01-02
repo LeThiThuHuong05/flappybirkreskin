@@ -3,7 +3,7 @@
   "_name": "coin",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 1.0333333333333334,
+  "_duration": 0.6666666666666666,
   "sample": 30,
   "speed": 1,
   "wrapMode": 22,
@@ -14,25 +14,19 @@
           {
             "frame": 0,
             "value": {
-              "__uuid__": "d04fc74c-c678-4c9e-9a8c-cd0332b48afb"
+              "__uuid__": "7c250b80-e98c-4f51-9027-133b47406208"
             }
           },
           {
             "frame": 0.3333333333333333,
             "value": {
-              "__uuid__": "710258ee-1de6-4bb4-97a7-6c45d983ba3a"
+              "__uuid__": "ea3655cb-947d-4cec-80d3-da6c1bbf9fa9"
             }
           },
           {
-            "frame": 0.6666666666666666,
+            "frame": 0.6333333333333333,
             "value": {
-              "__uuid__": "9cb05a4c-6df7-4595-9803-3c8897f1f6a7"
-            }
-          },
-          {
-            "frame": 1,
-            "value": {
-              "__uuid__": "9cb05a4c-6df7-4595-9803-3c8897f1f6a7"
+              "__uuid__": "942bd8ff-8ec9-4841-9785-c8faa6ef8449"
             }
           }
         ]
