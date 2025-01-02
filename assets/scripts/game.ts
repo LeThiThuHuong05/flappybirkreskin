@@ -169,6 +169,7 @@ export default class NewClass extends cc.Component {
         this.coinSfx.play();
     }
     resStartGame() {
+        this.bgm.play();
         this.isStart = false
         this.isOver = false
         this.coin = 0;
