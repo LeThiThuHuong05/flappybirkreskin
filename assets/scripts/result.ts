@@ -19,7 +19,7 @@ export default class NewClass extends cc.Component {
     maxScore: number = 0 // 最大分数
     score: number = 0 // 当前分数
     coin: number = 0 // 当前分数
-    life: number = 0 // 生命值
+    life: number = 5 // 生命值
 
     @property(cc.Label)
     scoreLabel: cc.Label = null
@@ -45,6 +45,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Sprite)
     newImg: cc.Sprite = null
 
+    @property(cc.Button)
+    reStartBtn: cc.Button = null
+
 
     init(game: Game) {
         this.game = game
@@ -54,7 +57,7 @@ export default class NewClass extends cc.Component {
     initResult() {
         this.updateScore(0)
         this.updateCoin(0)
-        this.updateLife(5)
+        this.updateLife(this.life)
 
         this.node.active = false
         this.scoreLabel.node.active = true
@@ -94,6 +97,8 @@ export default class NewClass extends cc.Component {
     }
 
     showResult() {
+        this.updateLife(Math.max(0, this.life - 1))
+        this.newImg.node.active = this.score > this.maxScore
         this.maxScore = Math.max(this.maxScore, this.score)
         this.scoreLabel.node.active = false
         this.node.active = true
@@ -103,7 +108,7 @@ export default class NewClass extends cc.Component {
         this.curLifeLabel.string = this.life.toString()
         this.scoreLabel.node.active = false
         this.lifeLabel.node.active = false
-        this.newImg.node.active = true
+        this.reStartBtn.node.active = this.life > 0
     }
 
 }
