@@ -43,7 +43,20 @@ export default class NewClass extends cc.Component {
     endPoint: string = "http://18.141.179.95/api/game/record-points"
 
     @property(cc.String)
-    urlParameterName: string = "gameSessionId"
+    urlParameterName: string = "sessionId"
+
+    @property(cc.String)
+    urlBestScoreParamName: string = "bestScore"
+
+    @property(cc.String)
+    urlTotalLifeParamName: string = "totalLife"
+
+    @property(cc.String)
+    urlRemainingPlaysParamName: string = "remainingPlays"
+
+    @property(cc.String)
+    urlTotalPointsParamName: string = "totalPoints"
+
     @property(cc.String)
     version: string = ""
 
@@ -61,6 +74,8 @@ export default class NewClass extends cc.Component {
     isStart: boolean = false // 是否开始
     isOver: boolean = false // 是否结束
     coin: number = 0;
+    life: number = 0;
+    maxScore: number = 0;
 
 
     onLoad() {
@@ -83,6 +98,7 @@ export default class NewClass extends cc.Component {
         this.versionLabel.node.zIndex = cc.macro.MAX_ZINDEX;
         // this.sessionId.string = "SessionId : " + Utils.getQueryParam(window.location.href, "token");
         this.sessionId.string = window.location.href;
+        this.initResult();
         // let token = Utils.getQueryParam(window.location.href, "token");
         // if (token) {
         //     this.backURL = this.backURL.replace("TOKEN", token);
@@ -90,6 +106,15 @@ export default class NewClass extends cc.Component {
         if (this.version != "") {
             this.versionLabel.string = this.version;
         }
+    }
+
+    initResult() {
+        const lifeString = Utils.getQueryParam(window.location.href, this.urlRemainingPlaysParamName);
+        this.life = parseInt(lifeString != null ? lifeString : '5');
+        const maxScoreString = Utils.getQueryParam(window.location.href, this.urlBestScoreParamName)
+        this.maxScore = parseInt(maxScoreString != null ? maxScoreString:'0');
+        this.result.updateLife(this.life);
+        this.result.maxScore = this.maxScore;
     }
 
 

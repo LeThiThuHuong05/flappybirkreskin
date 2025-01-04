@@ -19,7 +19,7 @@ export default class NewClass extends cc.Component {
     maxScore: number = 0 // 最大分数
     score: number = 0 // 当前分数
     coin: number = 0 // 当前分数
-    life: number = 5 // 生命值
+    life: number = 0 // 生命值
 
     @property(cc.Label)
     scoreLabel: cc.Label = null
@@ -57,7 +57,7 @@ export default class NewClass extends cc.Component {
     initResult() {
         this.updateScore(0)
         this.updateCoin(0)
-        this.updateLife(this.life)
+       // this.updateLife(this.life)
 
         this.node.active = false
         this.scoreLabel.node.active = true

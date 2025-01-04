@@ -5935,6 +5935,10 @@
     "mainSiteURL": "https://d30uuqr176uk1p.cloudfront.net",
     "endPoint": "https://happybird.xyz/dev/api/v1/game/record-points",
     "urlParameterName": "sessionId",
+    "urlBestScoreParamName": "bestScore",
+    "urlTotalLifeParamName": "totalLife",
+    "urlRemainingPlaysParamName": "remainingPlays",
+    "urlTotalPointsParamName": "totalPoints",
     "version": "1.1.0d",
     "bgm": {
       "__id__": 129
