@@ -115,6 +115,8 @@ export default class NewClass extends cc.Component {
         this.maxScore = parseInt(maxScoreString != null ? maxScoreString:'0');
         this.result.updateLife(this.life);
         this.result.maxScore = this.maxScore;
+
+        console.log("bestScore: ", maxScoreString, " - remainingPlays: ", lifeString);
     }
 
 
