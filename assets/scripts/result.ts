@@ -108,7 +108,7 @@ export default class NewClass extends cc.Component {
         this.curLifeLabel.string = this.life.toString()
         this.scoreLabel.node.active = false
         this.lifeLabel.node.active = false
-        this.reStartBtn.node.active = this.life > 0
+        this.reStartBtn.node.active = false;//this.life > 0
     }
 
 }

@@ -79,6 +79,11 @@ export default class NewClass extends cc.Component {
     }
 
     update(dt) {
+        console.log(this.game.isStart)
+        if (this.game.isStart == false)
+        {
+            this.node.destroy();
+        }
         const speed = this.game.speed * dt
         this.node.x -= speed
 
@@ -99,7 +104,8 @@ export default class NewClass extends cc.Component {
 
         // 回收
         if (this.isPass && this.node.x <= -800) {
-            this.game.poolMng.reusePipe(this.node)
+            //this.game.poolMng.reusePipe(this.node)
+            this.node.destroy();
         }
 
     }

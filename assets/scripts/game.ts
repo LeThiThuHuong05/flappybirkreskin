@@ -106,6 +106,21 @@ export default class NewClass extends cc.Component {
         if (this.version != "") {
             this.versionLabel.string = this.version;
         }
+        if (this.version.indexOf("d") > 0)
+        {
+            // dev
+            this.mainSiteURL = "https://d30uuqr176uk1p.cloudfront.net";
+            this.endPoint = "https://happybird.xyz/dev/api/v1/game/record-points";
+        }
+        else
+        {
+            // release            
+            this.mainSiteURL = "https://d1h921b82byyoa.cloudfront.net";
+            this.endPoint = "https://happybird.xyz/api/v1/game/record-points";
+            this.sessionId.enabled = false;
+            this.httpResponse.enabled = false;
+
+        }
     }
 
     initResult() {
