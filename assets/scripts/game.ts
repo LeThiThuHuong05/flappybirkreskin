@@ -110,7 +110,7 @@ export default class NewClass extends cc.Component {
         {
             // dev
             this.mainSiteURL = "https://d30uuqr176uk1p.cloudfront.net";
-            this.endPoint = "https://happybird.xyz/dev/api/v1/game/record-points";
+            this.endPoint = "https://dev.happybird.xyz/api/v1/game/record-points";
         }
         else
         {
